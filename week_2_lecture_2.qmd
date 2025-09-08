@@ -1,0 +1,65 @@
+---
+title: "CIS 351 A: Week 2 Lecture 2"
+author: "Your Name"
+format: 
+  html:
+    embed-resources: true
+---
+
+## Variable Assignments in R
+
+One of the main features of coding in R is the ability to define "objects" or "variables". Defining variables provide names to objects (vectors, matrices, data frames). Instead of writing the objects explicitly, we can reference these objects by the variables names assigned to them.
+
+In order to assign a variable name to an object in R, we must use the **assignment operator**, which is `<-`.
+
+**Example 1.** Consider the following sequence of integers: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31. Find (a) the mean, (b) the standard deviation, and (c) the variance of the sequence.
+
+a. *Method 1.* Finding the mean using the formula.
+```{r}
+(2 + 3 + 5 + 7 + 11 + 13 + 17 + 19 + 23 + 29 + 31)/11 # computing the mean of the sequence
+```
+
+*Method 2.* Using variable assignment to find the mean.
+
+```{r}
+primes <- c(2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31)
+
+mean(primes)
+```
+
+b. The standard deviation function in R is `sd()`.
+
+```{r}
+sd(primes)
+```
+
+c. The function for variance is `var()`.
+
+```{r}
+var(primes)
+
+sd(primes)^2
+```
+
+**Exercise 1.** From the `iris` dataset, compute the following using variable assignment. (a) the mean of `Sepal.Length`, (b) the standard deviation of `Sepal.Length`, (c) the variance of `Sepal.Length`, (d) the median of `Sepal.Length`.
+
+
+```{r}
+sl <- iris$Sepal.Length
+
+mean(sl)
+
+sd(sl)
+
+var(sl)
+
+median(sl)
+
+hist(sl)
+``` 
+
+## `{tidyverse}` Syntax
+
+In this class, we will adopt the convention of using lower snake case for all file names and variable names.
+
+In general, there should be no spaces in function names, variable names, and operator symbols.

@@ -1,0 +1,45 @@
+---
+title: "CIS 351 B: Week 2 Lecture 1"
+author: "Your Name"
+format: html
+---
+
+## Code Comments
+
+Code comments are useful code that is not compiled by R, but it can convey important information about our code.
+
+**Example 1.** Evaluate square-root of pi and write a code comment for the R code.
+
+```{r}
+sqrt(pi) # this evaluates square root of pi
+```
+
+## Scientific Notation In R
+
+```{r}
+1/1000000
+```
+
+The output of `1e-06` means $1 \times 10^{-6}$.
+
+**Example 2.** Evaluate cosine of pi/2.
+
+```{r}
+cos(pi/2)
+```
+
+The output is `6.123e-17`, which is very close to 0 (as expected).
+
+## Mathematical/Statistical Functions
+
+
+**Example 3.** Evaluate e^2.
+```{r}
+exp(2) # e^2
+```
+
+**Example 4.** Evaluate log(10).
+
+```{r}
+log(10) 
+```

@@ -1,0 +1,17 @@
+---
+title: "Week 1 Lecture 2"
+author: "Your Name"
+format: html
+---
+
+## Doing Math with R
+
+**Example 1.** Evaluate cosine of pi/3.
+```{r}
+cos(pi/3)
+```
+
+
+```{r}
+10^2
+```
