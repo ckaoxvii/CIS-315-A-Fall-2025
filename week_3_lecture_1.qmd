@@ -1,0 +1,111 @@
+---
+title: "CIS 351 B: Week 3 Lecture 1"
+author: "Your Name"
+format: 
+  html:
+    embed-resources: true
+---
+
+## Data Types in R
+
+In this course, we will work with the following three data types:
+
+1. **Numeric:** numbers, e.g., `13`, `pi`, `5e-5`.
+
+2. **Characters:** texts that are *not* numbers, they can letters or words combined with numbers and/or symbols. Examples of characters in R are: `"Flagler"`, `"Henry Flagler"`, `"AX14_BY77"`.
+
+3. **Logical (Boolean):** binary values corresponding to `TRUE` and `FALSE`. 
+
+We use the function `class()` to determine the data type of an object.
+
+### Numeric Values
+
+```{r}
+class(13)
+```
+
+```{r}
+class(pi^3/2)
+```
+
+```{r}
+class(5e-5)
+```
+
+```{r}
+x <- sqrt(pi^3)
+
+class(x)
+```
+
+### Character Values
+
+```{r}
+class("Pacific Ocean")
+```
+
+```{r}
+class("13")
+```
+
+```{r}
+fruits <- c("apple", "orange", "banana", "strawberry")
+
+class(fruits)
+```
+
+::: {.callout-caution}
+Character values in R are always wrapped by quotation marks.
+:::
+
+### Logical Values
+
+```{r}
+TRUE
+
+FALSE
+```
+
+```{r}
+class(TRUE)
+
+class(FALSE)
+```
+
+```{r}
+3 > pi
+```
+
+```{r}
+1 == 2 # is 1 equal to 2?
+```
+
+```{r}
+# is cos(pi/2) less than or equal 0?
+cos(pi/2) <= 0
+# cos(pi/2) in R is a small, but positive number, thus cos(pi/2) <= 0 in R is a false statement
+```
+
+```{r}
+fruits[1] == 'apple'
+```
+
+```{r}
+fruits[1] == 'orange'
+```
+
+::: {.callout-note}
+In R, we use `==` to check for equality of two objects. And `!=` to check whether two objects are not equal to each other. 
+
+In most modern programming languages (R included), `!` is used to negate a statement.
+:::
+
+**Exercise 1.** Is the 2nd item in `fruits` not equal to `kiwi`?
+
+```{r}
+fruits[2] != 'kiwi'
+```
+
+```{r}
+!(fruits[1] == 'apple')
+```
