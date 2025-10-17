@@ -1,0 +1,191 @@
+---
+title: "CIS 351 Quiz 3"
+subtitle: "Fall 2025"
+author: "Your Name"
+format: 
+  html:
+    code-line-numbers: true
+    embed-resources: true
+---
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+library(tidyverse)
+
+library(janitor)
+
+library(palmerpenguins)
+```
+
+**Instructions:**
+
+1. Finding errors and debugging code is an essential skill for any data scientist. In this quiz, you will be presented with several code snippets that contain errors. Your task is to identify and correct these errors. _Render the quarto document to read the error messages._
+
+2. For each code snippet, there is only one error. Identify the error and the line of code where it occurs. Then, provide the corrected version of the code snippet in the Correction callout box. Always end your corrected code with a line that displays the first few rows of the resulting data frame using the `head()` function.
+
+3. Work in groups of two. Make sure both group members' names are included at the top of the quiz.
+
+4. Render your quarto document and submit the resulting HTML file.
+
+
+:::{.callout-tip appearance="default" icon="false"}
+# Sample Question
+```{r}
+#| error: true
+#| warning: false
+
+df_0 < - penguins |> select(species) 
+```
+:::
+
+::: {.callout-note appearance="default" icon="false"}
+# Error Explanation
+
+The assignment operator in line 1 is incorrect. It should be `<-` instead of `< -`. The correct code should be
+:::
+
+::: {.callout-important appearance="default" icon="false"}
+# Correction
+```{r}
+df_0 <- penguins |> 
+  select(species)
+
+head(df_0)
+```
+:::
+
+
+:::{.callout-tip appearance="default" icon="false"}
+**Question 1.**
+
+```{r}
+#| error: true
+#| warning: false
+
+df_1 <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2024/2024-10-08/most_visited_nps_species_data.csv')
+
+name(df_1)
+```
+:::
+
+::: {.callout-note appearance="default" icon="false"}
+# Error Explanation
+
+:::
+
+::: {.callout-important appearance="default" icon="false"}
+# Correction
+```{r}
+```
+:::
+
+:::{.callout-tip appearance="default" icon="false"}
+**Question 2.**
+
+```{r}
+#| error: true
+#| warning: true 
+ 
+df_2 <- df_1 |> 
+  clean_names() |> 
+  select(park_code, park_name, category_name, common_name, nps_tags)
+```
+:::
+
+
+::: {.callout-note appearance="default" icon="false"}
+# Error Explanation
+
+:::
+
+::: {.callout-important appearance="default" icon="false"}
+# Correction
+```{r}
+```
+:::
+
+
+:::{.callout-tip appearance="default" icon="false"}
+**Question 3.**
+
+```{r}
+#| error: true
+#| warning: true
+
+df_3 <- df_1 |> 
+  clean_names() |> 
+  filter(category_name = 'Mammal')
+```
+:::
+
+
+::: {.callout-note appearance="default" icon="false"}
+# Error Explanation
+
+:::
+
+::: {.callout-important appearance="default" icon="false"}
+# Correction
+```{r}
+```
+:::
+
+:::{.callout-tip appearance="default" icon="false"}
+**Question 4.**
+
+```{r}
+#| error: true
+#| warning: true
+
+df_4 <- df_1 |> 
+  clean_names() |>
+  summarize(
+    mean_observation = mean(observations, na.rm = TRUE)
+    .by = park_name
+  )
+```
+:::
+
+
+::: {.callout-note appearance="default" icon="false"}
+# Error Explanation
+
+:::
+
+::: {.callout-important appearance="default" icon="false"}
+# Correction
+```{r}
+```
+:::
+
+:::{.callout-tip appearance="default" icon="false"}
+**Question 5.**
+
+```{r}
+#| error: true
+#| warning: true
+
+df_5 <- df_1 |> 
+  clean_names() |> 
+  summarize(
+    total_observations = sum(observations, na.rm = TRUE),
+    mean_observations = mean(observations, na.rm = TRUE),
+    by = park_name
+  ) |> 
+  arrange(desc_total_observations)
+```
+:::
+
+::: {.callout-note appearance="default" icon="false"}
+# Error Explanation
+
+:::
+
+::: {.callout-important appearance="default" icon="false"}
+# Correction
+```{r}
+```
+:::
