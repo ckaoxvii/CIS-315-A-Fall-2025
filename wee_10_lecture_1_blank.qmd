@@ -1,0 +1,93 @@
+---
+title: "Introduction to Data Visualization"
+subtitle: "Week 10 Lectures 1"
+author: "Your Name"
+format: 
+  html:
+    -embed-resources: true
+---
+
+```{r}
+#| message: false
+#| warning: false
+
+library(tidyverse)
+
+library(janitor)
+
+library(palmerpenguins)
+
+library(readxl)
+
+library(gapminder)
+
+library(gt)
+
+conflicted::conflicts_prefer(palmerpenguins::penguins)
+
+conflicted::conflicts_prefer(dplyr::filter)
+```
+
+## Barplots/Bar Charts
+
+Similar to histograms for numerical data, barplot (or bar chart) are used to display the magnitude of categorical data. The height of each bar represents the frequency or count of observations within each category.
+
+**Example 1.** Create a barplot to show the count of penguins in each species.
+
+_Method 1:_ Base R.
+
+In order to create a barplot in base R, data first needs to be summarized by group. In other words, we need to count the number of penguins in each species. This can be done using the `n()` function inside `summarize()`. The `n()` function gives the current group size.
+
+```{r}
+```
+
+The `barplot()` function in base R can then be used to create the barplot. Its syntax is as follows: `barplot(height, names.arg)`, where `height` is a numeric vector representing the heights of the bars, and `names.arg` is a character vector representing the names of each bar.
+
+```{r}
+```
+
+We can modify the plot by add colors according to the species.
+
+
+```{r}
+```
+
+_Method 2:_ Using `{ggplot2}`.
+
+Similar to plotting histograms, we can use the `geom_bar()` function in `{ggplot2}` to create barplots.
+
+```{r}
+```
+
+We can modify the plot by adding colors to each bar and a title, as well as adjust the axis labels and theme. We will use the official Flagler primary colors for this example: #A90533 (crimson), #FFB500 (king gold), and #69625D (railroad grey).
+
+```{r}
+```
+
+Adjusting the themes is the same as before when we worked with histograms.
+
+```{r}
+```
+
+```{r}
+```
+
+We can use default color palettes from the `{ggplot2}` package as well instead of specifying colors manually. This can be achieved using the `scale_fill_brewer()` function. However, to use this function, we need to map the `fill` aesthetic to the `species` variable inside the `aes()` function.
+
+```{r}
+```
+
+```{r}
+```
+
+
+```{r}
+```
+
+```{r}
+```
+
+If only the summary table is available, we can still create a barplot using `{ggplot2}` by specifying the `y` aesthetic inside the `aes()` function.
+
+```{r}
+```
